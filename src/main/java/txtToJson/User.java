@@ -1,3 +1,5 @@
+package txtToJson;
+
 import java.util.Objects;
 
 public class User {
@@ -45,17 +47,6 @@ public class User {
         this.bonuses = bonuses;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
-        return age == user.age && bonuses == user.bonuses && Objects.equals(login, user.login) && Objects.equals(name, user.name);
-    }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(login, name, age, bonuses);
-    }
 }
 

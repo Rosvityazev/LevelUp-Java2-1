@@ -1,5 +1,8 @@
+package txtToJson;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -18,7 +21,7 @@ public class UsersList {
     }
 
     public static void main(String[] args) {
-        String outputFileName = "jsonList.cvs";
+        String outputFileName = getString();
         try {
             try (BufferedWriter writer = new BufferedWriter(new FileWriter(outputFileName))) {
                 File file = new File("usersList.cvs");
@@ -41,6 +44,11 @@ public class UsersList {
         } finally {
             System.out.println("Файл создан, пожалуйста, проверьте JsonList. Спасибо.");
         }
+    }
+
+    private static String getString() {
+        String outputFileName = "jsonList.cvs";
+        return outputFileName;
     }
 }
 
